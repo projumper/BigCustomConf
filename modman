@@ -1,0 +1,4 @@
+src/app/code/local/Zentralweb/Windowconf     app/code/local/Zentralweb/Windowconf
+src/app/etc/modules/*    app/etc/modules/
+src/frontend/layout/*    app/design/frontend/base/default/layout/
+src/frontend/template/windowconf/*  app/design/frontend/base/default/template/windowconf

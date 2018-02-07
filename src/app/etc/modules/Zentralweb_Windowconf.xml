@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zentralweb_Windowconf>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends></depends>
+        </Zentralweb_Windowconf>
+    </modules>
+</config>

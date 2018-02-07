@@ -1,0 +1,326 @@
+<?php
+//echo "bin hier";
+//echo $this->testBlock();
+$this->getMegaOptions();
+
+?>
+
+    <script type="text/javascript" src="<?php echo Mage::getBaseUrl();?>js/windowconf/global-json.js"></script>
+    <script type="text/javascript" src="<?php echo Mage::getBaseUrl();?>js/windowconf/configurator.js"></script>
+    <style>
+        .beratungsservice {margin: 30px 0;}
+        .beratungsservice .konfiguration {padding: 15px; border: 1px solid #ededed;}
+        .beratungsservice .row {margin: 10px 0 20px;}
+        .beratungsservice .form-inline .form-control {width: 100%;}
+        .beratungsservice .form-control, .beratungsservice select, .beratungsservice textarea {width: 100%;}
+        .beratungsservice textarea {height: 150px; border: 1px solid #b0b0b1;}
+
+        .beratungsservice .carousel-inner {display: block; width: 100%; height: auto; overflow: hidden;}
+
+        .beratungsservice .carousel-inner .step {display: none; transition: transform .6s ease-in-out; -webkit-transition: -webkit-transform .6s ease-in-out; -o-transition: -o-transform .6s ease-in-out; -webkit-backface-visibility: hidden;}
+
+        .beratungsservice .carousel-inner .step.active {display: block; transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);}
+        .beratungsservice .zw-kon-vorteile ul {margin-left: 1em;}
+        .beratungsservice .zw-kon-vorteile ul li {padding-left: 1.2em; margin-bottom: 1em; line-height: 24px;}
+        .beratungsservice .zw-kon-vorteile ul li:before {font-family: "FontAwesome"; content: "\f00c"; margin-left: -1.2em; width: 1.2em; margin-right: 6px; font-size: 16px; color: #293A49;}
+        .text-center {text-align: center;}
+        .zw_iconset {border: 2px solid #f0f0f0; background: #eee; margin: 15px; display: block; text-align:center;}
+        .zw_iconset:hover {cursor: pointer; border: 2px solid #76CBFF; border-radius: 3px;}
+        .zw_iconset .label {text-transform: uppercase; font-size: 12px; color: #222222; background: #bbb; margin: 0; padding: 15px 0; display: block; text-align:center;height: 56px;}
+        .zw_iconset img {margin: 20px 0; width: auto; height: 120px;}
+        .zw_iconset input {margin: 20px auto;}
+
+        .zw_iconset.zw_selected {border: 2px solid #76CBFF !important; border-radius: 3px;}
+        .zw_iconset.zw_selected span.label {background: #76CBFF !important;}
+
+        .tabs_wrapper {border: none;}
+        .form .wrap {margin-bottom: 15px; clear: both;}
+        .form select {width: 100%;}
+        .well {background-color:rgba(175, 175, 175, 0.5); padding: 15px; border: 1px solid #fff;}
+        .ui-tabs .ui-tabs-panel {background-image: none; background: transparent;}
+        span.m2 {
+            font-size: 18px;
+            color: #008081;
+            font-weight: bold;
+            margin: 14px 0;
+            display: inline-block;}
+        span.m2 sup {font-size: 20px;}
+        .subline {font-size: 18px; color: #111;}
+        .well h2 {color: #000; font-size: 24px;}
+        .well input[type=radio] {display: none;}
+		.privatdata .column{margin: 5px 7px;}
+        .zw_iconset.zw_selected {border: 2px solid #008081 !important; border-radius: 3px;}
+        .zw_iconset.error {border: 2px solid #FF0000 !important;}
+        .zw_iconset.zw_selected span.label {background: #008081 !important;}
+        .beratungsservice button.btn-default {background: #D7D7D7; border: 1px solid #ffffff; margin-left: 15px;}
+        .beratungsservice button.btn-primary, .beratungsservice button.btn-success {background: #008081; border: 1px solid #ffffff; float: right; margin-right: 15px;}
+
+        @media (min-width: 992px) {
+            .fixed-config {
+                position: fixed;
+                width: 280px;
+                right: calc(50% - 470px);
+                top: 15px;
+                z-index: 99999;
+                background: #ffffff;
+                max-height: 800px;
+                overflow: auto;
+            }   
+        }
+        @media (min-width: 1200px) {
+            .fixed-config {
+                position: fixed;
+                width: 295px;
+                right: calc(50% - 585px);
+                top: 15px;
+                z-index: 99999;
+                background: #ffffff;
+                max-height: 800px;
+                overflow: auto;
+            }
+        }
+        @media (max-width: 1199px) {
+            .zw_iconset img {width: 40%; height: auto;}
+        }
+
+    </style>
+
+
+
+<?php
+//echo $formKey = Mage::getSingleton('core/session')->getFormKey();
+$_product = Mage::getModel('catalog/product')->load(1038);
+
+$conf_id = $this->checkId();
+
+if($conf_id)
+{
+    $json = $this->getConfJson($conf_id);
+
+    if($json)
+    {
+        echo "<script>var confJson = '".$json."';</script>";
+
+    }else{
+        echo "<script>var confJson = '';</script>";
+    }
+} else {
+    echo "<script>var confJson = '';</script>";
+}
+?>
+
+
+
+
+	<h1>Fensterkonfigurator: Mehr als 10 Optionen für Ihre individuelle Fenster</h1>
+	<div class="beratungsservice">
+	<div class="row">
+	<div class="col-md-9">
+
+            <div data-href-id="reparatur" class="">
+                <div class="carousel slide" data-ride="carousel" data-interval="false" id="winconf_carousel">
+                    <div class="carousel-inner" role="listbox" id="slideforms">
+                        <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="POST" id="product_addtocart_form" <?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> class="form">
+                            <input type="hidden" name="confid_hidden" id="confid_hidden" value="<?php echo $conf_id; ?>"/>
+                            <textarea name="zw-configurator-jsondata" id="zw-configurator-jsondata" class="zw-configurator-conf-order-json" style="display: none;"></textarea>
+                            <div class="zw-configurator-inner" id="zw_configurator_inner" data-current-step="" data-current-index="" data-configurator-id="<?php echo mt_rand();?>"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="">
+                <button type="button" class="btn btn-primary">Load configuration</button>
+            </div>
+
+            <script>
+                //replace with logo if no pic exists
+                function replace_pics() {
+                    var z = jQuery(".zw_iconset img").length;
+                    for(var i=0;i<z;i++) {
+                        if(jQuery(".zw_iconset img")[i].naturalHeight == 0) {
+                            jQuery(".zw_iconset img")[i].src = "<?=Mage::getURL('')?>skin/frontend/default/theme701/images/logo.png";
+                        }
+                    }
+                }
+                
+                jQuery( document ).ready(function() {
+                    console.log( "ready!" );
+                    zwWindowConfigurator.init({
+                        target: 'zw_configurator_inner',
+                        conf_data: confJson
+                    });
+                    replace_pics();
+                    jQuery(".zw-cloned-prev-next-btn .back-link").css("display","none");
+                });
+
+                jQuery(document).on("click","button[id^=btn_step]",function(){
+                    setTimeout(function() {
+                        replace_pics(); 
+                    }, 500);
+                });
+
+                //click correct next-button in correct slide
+                jQuery(document).on("click",".zw-cloned-prev-next-btn .next-step",function(){
+                    for(var i=0;i<jQuery(".wrap.well.step").length;i++) {
+                        if(jQuery(".wrap.well.step:eq("+i+")").attr("style") == "display: block;" || jQuery(".wrap.well.step").length == 1) {
+                            jQuery(".wrap.well.step:eq("+i+") .next-step").click();
+                        } else {
+                            jQuery(".zw-cloned-prev-next-btn .back-link").css("display","inline-block");
+                        }
+                    }
+                });
+                //click correct prev-button in correct slide
+                jQuery(document).on("click",".zw-cloned-prev-next-btn .back-link",function(){
+                    for(var i=0;i<jQuery(".wrap.well.step").length;i++) {
+                        if(jQuery(".wrap.well.step:eq("+i+")").attr("style") == "display: block;") {
+                            jQuery(".wrap.well.step:eq("+i+") .back-link").click();
+                            //hide back-link if in step 1
+                            if(i==1) {
+                                jQuery(".zw-cloned-prev-next-btn .back-link").css("display","none");
+                            }
+                        }
+                    }
+                });
+
+                //slide to .beratungsservice for better userbility
+                jQuery(document).on("click",".next-step,.back-link",function(){
+                    jQuery("html,body").animate({scrollTop: jQuery(".beratungsservice").offset().top},1000);
+                });
+
+                //show back-link if next-step is 1x clicked
+                jQuery(document).on("click",".next-step",function(){
+                    jQuery(".zw-cloned-prev-next-btn .back-link").css("display","inline-block");
+                });                
+
+                //hide back-link if in step 1
+                jQuery(document).on("click",".back-link",function(){
+                    for(var i=0;i<jQuery(".wrap.well.step").length;i++) {
+                        if(jQuery(".wrap.well.step:eq("+i+")").attr("style") == "display: block;" && i==1) {
+                            jQuery(".zw-cloned-prev-next-btn .back-link").css("display","none");
+                        }
+                    }
+                });                
+
+                //sticky config right ONLY for 992px and more
+                    jQuery(document).ready(function($) {
+                        function sticky()
+                        {
+                            var window_top=$(window).scrollTop();
+                            var element_to_stick=$('.konfiguration');
+                            if(screen.width > 1199) {
+                                if (window_top > 307) {
+                                    element_to_stick.addClass('fixed-config');
+                                } else {
+                                    element_to_stick.removeClass('fixed-config');
+                                }
+                            }
+                            else {
+                                if (window_top > 334) {
+                                    element_to_stick.addClass('fixed-config');
+                                } else {
+                                    element_to_stick.removeClass('fixed-config');
+                                }   
+                            }
+                        }
+                        $(window).scroll(sticky);
+                        sticky();
+                    });
+            </script>
+        </div>
+            
+        <div class="col-md-3 konfiguration">
+            <h2>Ihre Konfiguration</h2>
+            <div id="konfiguration-items"></div>
+            <div class="row zw-cloned-prev-next-btn">
+                <button type="button" class="btn btn-default back-link" style="margin:0"><i class="fa fa-angle-left"></i></button>
+                <button type="button" class="btn btn-primary next-step" style="margin:0">Weiter zum nächsten Schritt <i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+            
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-6">
+        <h2>Fenster nach Maß</h2>
+        <p>Nach Ihren Wünschen und Vorstellungen liefern wir Ihnen maßgenau Fenster und Türen in Kunststoff, Holz und Aluminium, sowie in allen erdenklichen Formen, Farben, Verglasungen und Ausführungen.</p>
+
+        <p>Dabei sind Ihren Vorstellungen kaum Grenzen gesetzt. Unsere Bauelemente entsprechen den neusten wärmetechnischen Anforderungen.</p>
+
+        <p>Bei uns erwerben Sie Neuware mit voller Herstellergarantie. Mit unserer großen Auswahl an Fensterprofilen, unterschiedlichen Glas-Arten, maßgenauen Formen sowie zahlreichen zusätzlichen Ausstattungsmöglichkeiten bieten wir Ihnen ungeahnte Möglichkeiten bei der individuellen Gestaltung ihrer Fenster.</p>
+        </div>
+        <div class="col-md-6">
+        <img src="http://185.88.213.211/dbk/media/wysiwyg/Slider/3-slide.jpg" class="img-responsive" />
+        </div>
+        </div>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    var productAddToCartForm = new VarienForm('product_addtocart_form');
+    productAddToCartForm.submit = function(button, url) {
+        if (this.validator.validate()) {
+            var form = this.form;
+            var oldUrl = form.action;
+
+            //alert(oldUrl);
+
+            if (url) {
+                form.action = url;
+            }
+            var e = null;
+            try {
+                this.form.submit();
+            } catch (e) {
+            }
+            this.form.action = oldUrl;
+            if (e) {
+                throw e;
+            }
+
+            if (button && button != 'undefined') {
+                button.disabled = true;
+            }
+        }
+    }.bind(productAddToCartForm);
+
+    productAddToCartForm.submitLight = function(button, url){
+        if(this.validator) {
+            var nv = Validation.methods;
+            delete Validation.methods['required-entry'];
+            delete Validation.methods['validate-one-required'];
+            delete Validation.methods['validate-one-required-by-name'];
+            // Remove custom datetime validators
+            for (var methodName in Validation.methods) {
+                if (methodName.match(/^validate-datetime-.*/i)) {
+                    delete Validation.methods[methodName];
+                }
+            }
+
+            if (this.validator.validate()) {
+                if (url) {
+                    this.form.action = url;
+                }
+                this.form.submit();
+            }
+            Object.extend(Validation.methods, nv);
+        }
+    }.bind(productAddToCartForm);
+
+
+    //]]>
+</script>
+
+
+<button type="button" title="In den Warenkorb" class="button btn-cart" onclick="productAddToCartForm.submit(this)" style="cursor: pointer;"><span><span>In den Warenkorb</span></span></button>
+<button type="button" title="Konfiguration Speichern" class="button btn-cart" onclick="productAddToCartForm.submit(this, '/dbk/windowconf/index/saveconfig')" style="cursor: pointer;"><span><span>Konfiguration Speichern</span></span></button>
+
+</form>
+
+<form action="/dbk/windowconf" method="post">
+
+<input type="text" name="confid" id="confid"/>
+    <input type="submit">
+
+</form>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <windowconf_index_index>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+        <reference name="content">
+            <block type="windowconf/windowconf" name="zw.wc.default" as = "zw.wc.default"  template="windowconf/window.phtml" />
+        </reference>
+    </windowconf_index_index>
+
+</layout>

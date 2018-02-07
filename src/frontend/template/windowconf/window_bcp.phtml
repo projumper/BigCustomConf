@@ -1,0 +1,562 @@
+<?php
+//echo "bin hier";
+//echo $this->testBlock();
+$this->getMegaOptions();
+?>
+    <style>
+        .beratungsservice {margin: 30px 0;}
+        .beratungsservice .konfiguration {padding: 15px; border: 1px solid #ededed;}
+        .beratungsservice .row {margin: 10px 0 20px;}
+        .beratungsservice .form-inline .form-control {width: 100%;}
+        .beratungsservice .form-control, .beratungsservice select, .beratungsservice textarea {width: 100%;}
+        .beratungsservice textarea {height: 150px; border: 1px solid #b0b0b1;}
+
+        .beratungsservice .carousel-inner {display: block; width: 100%; height: auto; overflow: hidden;}
+
+        .beratungsservice .carousel-inner .step {display: none; transition: transform .6s ease-in-out; -webkit-transition: -webkit-transform .6s ease-in-out; -o-transition: -o-transform .6s ease-in-out; -webkit-backface-visibility: hidden;}
+
+        .beratungsservice .carousel-inner .step.active {display: block; transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);}
+        .beratungsservice .zw-kon-vorteile ul {margin-left: 1em;}
+        .beratungsservice .zw-kon-vorteile ul li {padding-left: 1.2em; margin-bottom: 1em; line-height: 24px;}
+        .beratungsservice .zw-kon-vorteile ul li:before {font-family: "FontAwesome"; content: "\f00c"; margin-left: -1.2em; width: 1.2em; margin-right: 6px; font-size: 16px; color: #293A49;}
+        .text-center {text-align: center;}
+        .zw_iconset {border: 2px solid #f0f0f0; background: #eee; margin: 15px; display: block; text-align:center;}
+        .zw_iconset:hover {cursor: pointer; border: 2px solid #76CBFF; border-radius: 3px;}
+        .zw_iconset .label {text-transform: uppercase; font-size: 12px; color: #222222; background: #bbb; margin: 0; padding: 15px 0; display: block; text-align:center;}
+        .zw_iconset img {margin: 20px 0; width: 40%; max-width: 40% !important;}
+        .zw_iconset input {margin: 20px auto;}
+
+        .zw_iconset.zw_selected {border: 2px solid #76CBFF !important; border-radius: 3px;}
+        .zw_iconset.zw_selected span.label {background: #76CBFF !important;}
+
+        .tabs_wrapper {border: none;}
+        .form .wrap {margin-bottom: 15px; clear: both;}
+        .form select {width: 100%;}
+        .well {background-color:rgba(175, 175, 175, 0.5); padding: 15px; border: 1px solid #fff;}
+        .ui-tabs .ui-tabs-panel {background-image: none; background: transparent;}
+        span.m2 {
+            font-size: 18px;
+            color: #008081;
+            font-weight: bold;
+            margin: 14px 0;
+            display: inline-block;}
+        span.m2 sup {font-size: 20px;}
+        .subline {font-size: 18px; color: #111;}
+        .well h2 {color: #000; font-size: 24px;}
+        .well input[type=radio] {display: none;}
+		.privatdata .column{margin: 5px 7px;}
+.zw_iconset.zw_selected {border: 2px solid #008081 !important; border-radius: 3px;}
+.zw_iconset.error {border: 2px solid #FF0000 !important;}
+.zw_iconset.zw_selected span.label {background: #008081 !important;}
+.beratungsservice button.btn-default {background: #D7D7D7; border: 1px solid #ffffff; margin-left: 15px;}
+.beratungsservice button.btn-primary, .beratungsservice button.btn-success {background: #008081; border: 1px solid #ffffff; float: right; margin-right: 15px;}
+    </style>
+	<h1>Fensterkonfigurator: Mehr als 10 Optionen für Ihre individuelle Fenster</h1>
+	<div class="beratungsservice">
+	<div class="row">
+	<div class="col-md-9">
+
+	<div data-href-id="reparatur" class="">
+		<div class="carousel slide" data-ride="carousel" data-interval="false">
+			<div class="carousel-inner" role="listbox" id="slideforms">
+				<form action="/raumluftplanung-bestaetigung/" class="form" method="POST" enctype="multipart/form-data">
+
+					<!-- slide_step1 -->
+    <div class="wrap well step active" id="slide_step1" slide-type="question">
+        <div class="row">
+            <div class="col-md-12">                
+				<h2>Material</h2>
+				<p class="subline">Bitte geben Sie zunächst die Größe Ihres Objektes und den Bautyp ein:</p>
+            </div>
+        </div>
+        <div class="row">
+			<div class="col-md-4">
+				<label for="material" class="zw_iconset">
+					<span class="material"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/7/1/1/70x/Classic_5K.jpg"></span>
+					<span class="label">Kunststoff</span>
+					<input type="radio" class="konfigurator-radio" required="required" name="material" value="Isolo 7000, 5 Kammer Classic, 70 mm Bautiefe">
+				</label>
+            </div>
+			<div class="col-md-4"> 
+				<label for="material" class="zw_iconset">
+					<span class="material"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/7/1/2/70x/Rondo_5K.jpg"></span>
+					<span class="label">Holz</span>
+					<input type="radio" class="konfigurator-radio" required="required" name="material" value="Isolo 7000, 5 Kammer Rondo, 70 mm Bautiefe">
+				</label>
+            </div>
+			<div class="col-md-4"> 
+				<label for="material" class="zw_iconset">
+					<span class="material"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/7/1/2/70x/Rondo_5K.jpg"></span>
+					<span class="label">Aluminium</span>
+					<input type="radio" class="konfigurator-radio" required="required" name="material" value="Isolo 7000, 5 Kammer Rondo, 70 mm Bautiefe">
+				</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <button type="button" class="btn btn-primary next-step" slide="step1" id="btn_step1">Weiter zum nächsten Schritt <i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+	
+                                        
+    <!-- slide_step2 -->
+    <div class="wrap well step" id="slide_step2" slide-type="question">
+        <div class="row">
+            <div class="col-md-12">                
+                <h2>Profilsystem</h2>
+                <p class="subline">Bitte geben Sie zunächst die Größe Ihres Objektes und den Bautyp ein:</p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-6">
+                <label for="profilsystem" class="zw_iconset">
+                    <span class="profilsystem"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/7/1/1/70x/Classic_5K.jpg"></span>
+                    <span class="label">Isolo 7000, 5 Kammer Classic, 70 mm Bautiefe</span>
+                    <input type="radio" class="konfigurator-radio" required="required" name="profilsystem" value="Isolo 7000, 5 Kammer Classic, 70 mm Bautiefe">
+                </label>
+            </div>
+            
+            <div class="col-md-6"> 
+                <label for="profilsystem" class="zw_iconset">
+                    <span class="profilsystem"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/7/1/2/70x/Rondo_5K.jpg"></span>
+                    <span class="label">Isolo 7000, 5 Kammer Rondo, 70 mm Bautiefe</span>
+                    <input type="radio" class="konfigurator-radio" required="required" name="profilsystem" value="Isolo 7000, 5 Kammer Rondo, 70 mm Bautiefe">
+                </label>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default back-link" slide="step2"><i class="fa fa-angle-left"></i></button>
+                <button type="button" class="btn btn-primary next-step" slide="step2" id="btn_step2">Weiter zum nächsten Schritt <i class="fa fa-angle-left"></i></button>
+            </div>
+        </div>        
+    </div>
+        
+        
+					<!-- slide_step3 -->
+					<div class="wrap well step " id="slide_step3" slide-type="question">
+						<div class="row">
+							<div class="col-md-12">
+								<h2>Fenstermaß angeben</h2>
+								<p class="subline">Bitte geben Sie zunächst die Fenstergröße ein:</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="bauart" class="zw_iconset ">
+									<span class="m2">Maßbereich:<br>782mm - 2800mm</br>(Gesamtaußenmaß)</span><br>
+									<input type="text" class="form-control" style="width: 50%;" required="required" name="wohnflaeche" id="wohnflaeche" value="">
+									<span class="label">Breite, mm</span>
+									<input type="radio" class="konfigurator-radio" required="required" name="bauart" value="Neubau">
+								</label>
+							</div>
+							<div class="col-md-6">
+								<label for="bauart" class="zw_iconset ">
+									<span class="m2">Maßbereich:<br>455mm - 1700mm<br>(Gesamtaußenmaß)</span><br>
+									<input type="text" class="form-control" style="width: 50%;" required="required" name="wohnflaeche" id="wohnflaeche" value="">
+									<span class="label">Höhe, mm</span>
+									<input type="radio" class="konfigurator-radio" required="required" name="bauart" value="Bestandsbau">
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+							<button type="button" class="btn btn-default back-link" slide="step3">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+								<button type="button" class="btn btn-primary next-step" slide="step3" id="btn_step3">Weiter zum nächsten Schritt <i class="fa fa-angle-right"></i></button>
+							</div>
+						</div>
+					</div>
+	
+	<!-- slide_step4 -->
+    <div class="wrap well step " id="slide_step4" slide-type="question">
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <h2>Öffnungsart</h2>
+                    <p class="subline">Bitte wählen Sie öffnungsart aus:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+			</div>
+			<div class="row">
+			<div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/31/70x/rechts_fest_dkl.jpg"></span>
+                        <span class="label">Rechts Fest, Dreh/Kipp Links -11,50 €##-0.1</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+			
+			<div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/32/70x/links_fest_drr.jpg"></span>
+                        <span class="label">Links Fest, Dreh/Kipp Rechts -11,50 €##-0.1</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <button type="button" class="btn btn-default back-link" slide="step4">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary next-step" slide="step4" id="btn_step4">Weiter zum nächsten Schritt <i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+	
+	<!-- slide_step5 -->
+    <div class="wrap well step " id="slide_step5" slide-type="question">
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <h2>Außenfarbe</h2>
+                    <p class="subline">Bitte wählen Sie Außenfarbe aus:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+		</div>
+		<div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+		</div>
+		<div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+		</div>
+		<div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+		</div>
+		<div class="row">
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/23/70x/2_lfg_stulp_dkr.jpg"></span>
+                        <span class="label">Dreh DIN Links (Stulp), Rechts Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Wohnen">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/24/70x/2_lfg_stulp_dkL.jpg"></span>
+                        <span class="label">Dreh DIN Rechts (Stulp), Links Dreh/Kipp ohne Pfosten</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Gewerbe">
+                    </label>
+            </div>
+            <div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/25/70x/2xdk.jpg"></span>
+                        <span class="label">2 x Dreh/Kipp (mit Pfosten)</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+		</div>
+			<div class="row">
+			<div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/31/70x/rechts_fest_dkl.jpg"></span>
+                        <span class="label">Rechts Fest, Dreh/Kipp Links -11,50 €##-0.1</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+			
+			<div class="col-md-4">
+                    <label for="oeffnungsart" class="zw_iconset ">
+                        <span class="oeffnungsart"><img src="https://dasbaustoffkontor.de/shop/media/customoptions/10/2/32/70x/links_fest_drr.jpg"></span>
+                        <span class="label">Links Fest, Dreh/Kipp Rechts -11,50 €##-0.1</span>
+                        <input type="radio" class="konfigurator-radio" required="required" name="oeffnungsart" value="Sonstiges">
+                    </label>
+            </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <button type="button" class="btn btn-default back-link" slide="step5">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary next-step" slide="step5" id="btn_step5">Weiter zum nächsten Schritt <i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+	
+	<!-- slide_step11 -->
+    <div class="wrap well step " id="slide_step11" slide-type="question">
+        <div class="row">
+            <div class="col-md-12">
+                    <h2>Wir haben Ihr Preis berechnet</h2>
+                    <p class="subline">Ihr Preis ist 123 Euro</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <a class="btn btn-success">In den Warenkorb <i class="fa fa-cart-plus"></i></a>
+            </div>
+        </div>
+    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script>
+                    jQuery(document).on("click","button.next-step",function(){
+                        var lock = 0;
+                        var slide_key = 'slide_' + jQuery(this).attr('slide');                        
+                        var location = jQuery('#'+slide_key);
+                        
+                        var input_name = '';
+                        if( location.attr('slide-type') != 'contact' && location.attr('slide-type') != 'upload' ){
+                            
+                            if( jQuery('#'+slide_key + " input:radio[required]").length ){
+                                lock = 1;
+                            }
+                            
+                            jQuery('#'+slide_key + " input[required]").each(function( index ) {
+                                var input_type = jQuery(this).attr('type');
+                                input_name = jQuery(this).attr('name');
+                                if(input_type == 'radio'){
+                                    if( jQuery(this).is(":checked") == true ){
+                                        lock = 0;
+                                    }                                
+                                }
+                                if(input_type == 'text'){
+                                    if( jQuery(this).val() == '' ){
+                                        lock = 1;
+                                    }                                
+                                }
+                            });
+                            
+                        } else {
+                            lock = 0;
+                            if( location.attr('slide-type') == 'contact' ){
+                                
+                                jQuery('#'+slide_key + " input[required]").each(function( index ) {
+                                    var input_type = jQuery(this).attr('type');
+                                    input_name = jQuery(this).attr('name');
+                                    if(input_type == 'checkbox'){
+                                        if( jQuery(this).is(":checked") != true ){
+                                            lock = 1;
+                                        }                                
+                                    }
+                                    if(input_type == 'text'){
+                                        if( jQuery(this).val() == '' ){
+                                            lock = 1;
+                                        }                                
+                                    }
+                                });
+                                
+                            }
+                        }
+                        
+                                                
+                        if(lock != 1) {
+                            
+                            if( jQuery('#'+slide_key + " input#motor_count").length ){
+                                if( jQuery('#'+slide_key + " input#motor_count").val() != jQuery('#start_motor_count').val() ){
+                                    var form= document.createElement('form');
+                                    form.method= 'post';
+                                    form.action= window.location.protocol+'//'+window.location.hostname+window.location.pathname;
+                                    
+                                    var input= document.createElement('input');
+                                    input.type= 'hidden';
+                                    input.name= 'motor_count';
+                                    input.value= jQuery('#'+slide_key + " input#motor_count").val();
+                                    form.appendChild(input);
+                                    document.body.appendChild(form);
+                                    
+                                    form.submit();
+                                    return false;
+                                }                                
+                            }
+                            
+                            var next_location = location.next();
+                            location.slideUp("slow");
+                            location.next().slideDown("slow");
+                            
+                        } else {
+                            if(input_name != ''){
+                                if( jQuery('#'+slide_key + " input:radio[required]").length ){
+                                    jQuery('input[name='+input_name+']').parent('.zw_iconset').addClass('error');
+                                    setTimeout(function() {
+                                        jQuery('input[name='+input_name+']').parent('.zw_iconset').removeClass('error');
+                                    }, 1000);
+                                } else {
+                                    jQuery('#'+slide_key + " input:text").parent('.zw_iconset').addClass('error');
+                                    jQuery('#'+slide_key + " input:text").each(function() {
+                                        if( jQuery(this).val() != '' )
+                                            jQuery(this).parent('.zw_iconset').removeClass('error');
+                                    });
+                                    setTimeout(function() {
+                                        jQuery('#'+slide_key + " .zw_iconset").removeClass('error');
+                                    }, 1000);
+                                }
+                            }                            
+                        }
+
+                    });
+                    
+                    //END Click next-step
+                    jQuery(document).on("click","button.back-link",function(){
+                        var location = jQuery(this).parent().parent().parent().parent();
+                        location.slideUp("slow");
+                        location.prev().slideDown("slow");
+                    });
+                    
+                    jQuery(document).on("click",".zw_iconset",function(){
+                        var input_radio = jQuery(this).find('input:radio');
+                        var input_checkbox = jQuery(this).find('input:checkbox');
+                        var div_step = jQuery(this).parents('.step');
+                        
+                        if( input_radio.length ){
+                            
+                            jQuery('input:radio[name="'+input_radio.attr('name')+'"]').attr('checked', false);
+                            input_radio.attr('checked', 'checked');
+                            
+                            jQuery("#"+ div_step.attr('id') +" .zw_iconset").removeClass('zw_selected');
+                            jQuery(this).addClass('zw_selected');
+                        }
+                        
+                        if( input_checkbox.length ){
+                            
+                            if( jQuery(this).hasClass('zw_selected') ){
+                                
+                                input_checkbox.attr('checked', false);
+                                jQuery(this).removeClass('zw_selected');
+                                
+                            } else {
+                                
+                                input_checkbox.attr('checked', 'checked');
+                                jQuery(this).addClass('zw_selected');
+                                
+                            }
+                            
+                        }
+                        
+                    });
+		</script>
+		</div>
+		<div class="col-md-3 konfiguration">
+		<h2>Ihre Konfiguration</h2>
+		</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-md-6">
+		<h2>Fenster nach Maß</h2>
+		<p>Nach Ihren Wünschen und Vorstellungen liefern wir Ihnen maßgenau Fenster und Türen in Kunststoff, Holz und Aluminium, sowie in allen erdenklichen Formen, Farben, Verglasungen und Ausführungen.</p>
+
+		<p>Dabei sind Ihren Vorstellungen kaum Grenzen gesetzt. Unsere Bauelemente entsprechen den neusten wärmetechnischen Anforderungen.</p>
+
+		<p>Bei uns erwerben Sie Neuware mit voller Herstellergarantie. Mit unserer großen Auswahl an Fensterprofilen, unterschiedlichen Glas-Arten, maßgenauen Formen sowie zahlreichen zusätzlichen Ausstattungsmöglichkeiten bieten wir Ihnen ungeahnte Möglichkeiten bei der individuellen Gestaltung ihrer Fenster.</p>
+		</div>
+		<div class="col-md-6">
+		<img src="http://185.88.213.211/dbk/media/wysiwyg/Slider/3-slide.jpg" class="img-responsive" />
+		</div>
+		</div>
